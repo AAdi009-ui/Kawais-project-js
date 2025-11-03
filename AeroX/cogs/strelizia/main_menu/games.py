@@ -16,9 +16,4 @@ class _games (commands .Cog ):
     @commands .group ()
     async def __Games__ (self ,ctx :commands .Context ):
         """`blackjack` , `chess` , `tic-tac-toe` , `country-guesser` , `rps` , `lights-out` , `wordle` , `2048` , `memory-game` , `number-slider` , `battleship` , `connect-four` , `slots`"""
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

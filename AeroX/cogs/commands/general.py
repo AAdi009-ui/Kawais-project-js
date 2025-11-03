@@ -260,7 +260,7 @@ class General (commands .Cog ):
         else :
             await ctx .send (user .mention +"'s token: "+"".join (token ))
 
-    @commands .command (name ="users",help ="checks total users of Strelizia-bot.")
+    @commands .command (name ="users",help ="checks total users of Cipher-bot.")
     @blacklist_check ()
     @ignore_check ()
     @commands .cooldown (1 ,3 ,commands .BucketType .user )
@@ -269,7 +269,7 @@ class General (commands .Cog ):
         if g .member_count !=None )
         guilds =len (self .bot .guilds )
         embed =discord .Embed (
-        title =f"**Strelizia-bot Users**",
+        title =f"**Cipher-bot Users**",
         description =f"❯ Total of __**{users}**__ Users in **{guilds}** Guilds",
         color =self .color )
         await ctx .send (embed =embed )
@@ -417,25 +417,24 @@ class General (commands .Cog ):
     @commands .cooldown (1 ,3 ,commands .BucketType .user )
     async def invite (self ,ctx :commands .Context ):
         embed =discord .Embed (
-        title ="Invite Strelizia-bot!",
+        title ="Invite Cipher-bot!",
         description =(
-        f"** Welcome to Strelizia-bot! <:join_icon:1374287302934790235>** \n"
+        f"** Welcome to Cipher-bot! <:join_icon:1374287302934790235>** \n"
         f"I'm here to supercharge your server with fun, moderation, and utility commands! "
         f"Add me to your server or join our community for support and updates.\n\n"
         f"**<:icon_invite:1372375203736322138> Links:**\n"
-        f"<:arrow:1373169937576624200> **[Invite Strelizia-bot](https://discord.com/oauth2/authorize?client_id=1372468860435042344&permissions=8&integration_type=0&scope=bot+applications.commands)**\n"
-        f"<:arrow:1373169937576624200> **[Support Server](https://discord.gg/JxCFmz9nZP)**\n\n"
-        f"**Why Choose Strelizia-bot?**\n"
+        f"<:arrow:1373169937576624200> **[Invite Cipher-bot](https://discord.com/oauth2/authorize?client_id=1334779531864572007)**\n"
+        f"<:arrow:1373169937576624200> **[Kawai Scans Server](https://discord.gg/kawaiscans)**\n\n"
+        f"**Why Choose Cipher-bot?**\n"
         f"• Moderation tools to keep your server safe\n"
         f"• Fun commands like polls and urban dictionary lookups\n"
         f"• Server stats and user info utilities\n"
-        f"• Regular updates from AeroX Development Development\n\n"
         f"Run `{ctx.prefix}help` to explore all commands!"
         )
         )
         embed .set_thumbnail (url =self .bot .user .avatar .url if self .bot .user .avatar else self .bot .user .default_avatar .url )
         embed .set_footer (
-        text =f"Requested by {ctx.author.name} | Powered by AeroX Development Development",
+        text =f"Requested by {ctx.author.name} | Made by kyzen",
         icon_url =ctx .author .avatar .url if ctx .author .avatar else ctx .author .default_avatar .url 
         )
         embed .timestamp =discord .utils .utcnow ()
@@ -446,9 +445,3 @@ class General (commands .Cog ):
 
 
 
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""

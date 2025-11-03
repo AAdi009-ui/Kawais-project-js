@@ -17,9 +17,4 @@ class __sticky (commands .Cog ):
     @commands .group ()
     async def __Sticky__ (self ,ctx :commands .Context ):
         """`sticky setup` , `sticky remove` , `sticky list` , `sticky toggle` , `sticky edit` , `sticky config`"""
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

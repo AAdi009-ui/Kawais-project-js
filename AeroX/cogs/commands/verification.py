@@ -1699,9 +1699,4 @@ class Verification (commands .Cog ):
 async def setup (bot ):
     await bot .add_cog (Verification (bot ))
     logger .info ("Advanced verification cog loaded successfully")
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

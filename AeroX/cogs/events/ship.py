@@ -18,7 +18,7 @@ logger =logging .getLogger ('discord')
 class Ship (commands .Cog ):
     def __init__ (self ,bot ):
         self .bot =bot 
-        self .special_users =[1152073459443191859 ,]
+        self .special_users =[1035500738572451891 ,]
 
     @commands .hybrid_command (pass_context =True ,help ="Ship two users together.")
     @blacklist_check ()
@@ -120,9 +120,4 @@ async def get_avatar (user ):
 
 def setup (bot ):
     bot .add_cog (Ship (bot ))
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

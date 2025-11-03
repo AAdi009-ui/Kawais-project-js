@@ -1423,9 +1423,4 @@ async def setup (bot ):
     await bot .add_cog (Staff (bot ))
     logger .info ("Staff cog has been loaded successfully.")
 
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

@@ -16,9 +16,4 @@ class _logging (commands .Cog ):
     @commands .group ()
     async def __Logging__ (self ,ctx :commands .Context ):
         """`log`, `log enable`, `log disable`, `log config`, `log ignore`, `log status`, `log toggle`"""
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

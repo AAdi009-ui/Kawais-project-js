@@ -54,9 +54,4 @@ class Sampler (Enum ):
     DPM_2M_KARRAS =("DPM++ 2M Karras","04")
     DPM_SDE_KARRAS =("DPM++ SDE Karras","05")
     DDIM =("DDIM","06")
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

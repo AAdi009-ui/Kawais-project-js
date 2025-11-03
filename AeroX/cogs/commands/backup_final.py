@@ -664,9 +664,4 @@ class Backup (commands .Cog ):
 
 async def setup (bot ):
     await bot .add_cog (Backup (bot ))
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

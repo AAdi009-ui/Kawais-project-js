@@ -76,7 +76,7 @@ class Stats (commands .Cog ):
     @ignore_check ()
     @commands .cooldown (1 ,7 ,commands .BucketType .user )
     async def stats (self ,ctx ):
-        processing_message =await ctx .send ("<a:Strelizia_loading:1373173756113195081> Loading Strelizia-bot information...")
+        processing_message =await ctx .send ("<a:Cipher_loading:1373173756113195081> Loading Cipher-bot information...")
 
         guild_count =len (self .bot .guilds )
         user_count =sum (len (g .members )for g in self .bot .guilds )
@@ -102,7 +102,7 @@ class Stats (commands .Cog ):
         channels_connected =sum (1 for vc in self .bot .voice_clients if vc )
         playing_tracks =sum (1 for vc in self .bot .voice_clients if vc .playing )
 
-        embed =Embed (title ="Strelizia-bot Statistics: General",color =0x000000 )
+        embed =Embed (title ="Cipher-bot Statistics: General",color =0x000000 )
         embed .add_field (name =" Channels",value =f"Total: **{channel_count}**\nText: **{text_channel_count}**   |   Voice: **{voice_channel_count}**   |   Category: **{category_channel_count}**",inline =False )
         embed .add_field (name ="<:icons_pings:1373173701704683540> Uptime",value =f"{uptime}",inline =False )
         embed .add_field (name ="<:icon_teams:1373173654904639540> User Count",value =f"Humans: **{human_count}**   |   Bots: **{bot_count}**",inline =False )
@@ -116,7 +116,7 @@ class Stats (commands .Cog ):
         f"Total Songs Played: **{self.total_songs_played}**",
         inline =False 
         )
-        embed .set_footer (text ="Powered by AeroX Development",icon_url =self .bot .user .display_avatar .url )
+        embed .set_footer (text ="Made by kyzen",icon_url =self .bot .user .display_avatar .url )
 
         view =View ()
 
@@ -131,7 +131,7 @@ class Stats (commands .Cog ):
         system_button =Button (label ="System",style =ButtonStyle .gray )
         async def system_button_callback (interaction ):
             if interaction .user ==ctx .author :
-                system_embed =Embed (title ="Strelizia-bot Statistics: System",color =0x000000 )
+                system_embed =Embed (title ="Cipher-bot Statistics: System",color =0x000000 )
 
                 system_embed .add_field (name ="<:icon_ignore:1373173575078379590> System Info",value =f"• Discord.py: **{discord.__version__}**\n• Python: **{platform.python_version()}**\n• Architecture: **{platform.machine()}**\n• Platform: **{platform.system()}**",inline =False )
 
@@ -141,7 +141,7 @@ class Stats (commands .Cog ):
                 cpu_current =f"{cpu_info.current:.2f} MHz"if cpu_info and cpu_info .current else "N/A"
 
                 system_embed .add_field (name ="<:icon_settings:1373173980466384967>  CPU Info",value =f"• CPU: **{cpu_max}**\n• CPU Usage: **{psutil.cpu_percent()}%**\n• CPU Cores: **{psutil.cpu_count(logical=False)}**\n• CPU Speed: **{cpu_current}**",inline =False )
-                system_embed .set_footer (text ="Powered by AeroX Development",icon_url =self .bot .user .display_avatar .url )
+                system_embed .set_footer (text ="Made by kyzen",icon_url =self .bot .user .display_avatar .url )
 
                 await interaction .response .edit_message (embed =system_embed ,view =view )
         system_button .callback =system_button_callback 
@@ -167,7 +167,7 @@ class Stats (commands .Cog ):
 
                 wsping =round (self .bot .latency *1000 ,2 )
 
-                ping_embed =Embed (title ="Strelizia-bot Statistics: Latency Overview",color =0x000000 )
+                ping_embed =Embed (title ="Cipher-bot Statistics: Latency Overview",color =0x000000 )
                 ping_embed .add_field (
                 name ="<:icons_pings:1373173701704683540> Latency Overview",
                 value =f"<:icon_teams:1373173654904639540> Bot Latency: **{round(sh.latency * 800)}ms**\n"
@@ -176,7 +176,7 @@ class Stats (commands .Cog ):
                 f"<:code_icons:1387456901192749116> Last Ping Check: <t:{int(time.time())}:R>",
                 inline =False 
                 )
-                ping_embed .set_footer (text ="Developed By AeroX Development",icon_url =self .bot .user .display_avatar .url )
+                ping_embed .set_footer (text ="Made by kyzen",icon_url =self .bot .user .display_avatar .url )
                 ping_embed .set_author (name =self .bot .user .display_name ,icon_url =self .bot .user .display_avatar .url )
                 ping_embed .set_thumbnail (url =self .bot .user .display_avatar .url )
                 await interaction .response .edit_message (embed =ping_embed ,view =view )
@@ -203,15 +203,5 @@ class Stats (commands .Cog ):
         await ctx .reply (embed =embed ,view =view )
         await processing_message .delete ()
 
-"""
-@Author: Aegis
-    + Discord: Solcodez
-    + Community: https://discord.strelix.xyz (AeroX Development)
-    + for any queries reach out Community or DM me.
-"""
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+
+

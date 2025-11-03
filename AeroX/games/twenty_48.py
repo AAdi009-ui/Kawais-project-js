@@ -373,9 +373,4 @@ class Twenty48 :
 
         return self .message 
 
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

@@ -46,7 +46,7 @@ class TopCheck (commands .Cog ):
         embed =discord .Embed (title ="Top Check System",
         description =(
         "This system ensures that the bot’s role is positioned higher than the user’s top role before executing specific commands.\n\n"
-        "When topcheck is enabled, only users with roles above the bot's (Strelizia) role can perform certain moderation actions. "
+        "When topcheck is enabled, only users with roles above the bot's (Cipher) role can perform certain moderation actions. "
         "If topcheck is disabled, any user with the required permissions for a command can execute it.\n\n"
         "**Moderation actions affected by topcheck:**\n"
         "- BAN\n"
@@ -86,15 +86,5 @@ class TopCheck (commands .Cog ):
         await self .disable_topcheck (ctx .guild .id )
         await ctx .reply ("<:icon_tick:1372375089668161597> Topcheck has been Successfully disabled for this server.")
 
-"""
-@Author: Aegis
-    + Discord: Solcodez
-    + Community: https://discord.strelix.xyz (AeroX Development)
-    + for any queries reach out Community or DM me.
-"""
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+
+

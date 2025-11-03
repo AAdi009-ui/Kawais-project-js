@@ -17,9 +17,4 @@ class ticket (commands .Cog ):
     async def __TICKET__ (self ,ctx :commands .Context ):
         """`ticket` , `ticket setup` , `ticket reset` , `ticket close` , `ticket transcript` , `ticket add` , `ticket remove` , `ticket rename` , `ticket category-add` , `ticket category-remove` , `ticket category-list` , `ticket category-default` , `ticket panel-send` , `ticket claim`
         """
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

@@ -17,9 +17,4 @@ class _fun (commands .Cog ):
     @commands .group ()
     async def __Fun__ (self ,ctx :commands .Context ):
         """`mydog` , `chat` , `translate` , `howgay` , `lesbian` , `cute` , `intelligence` , `horny` , `gif` , `iplookup` , `weather` , `hug` , `kiss` , `pat` , `cuddle` , `slap` , `tickle` , `spank` , `ngif` , `8ball` , `truth` , `dare`"""
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

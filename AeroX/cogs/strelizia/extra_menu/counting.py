@@ -19,9 +19,4 @@ class _counting (commands .Cog ):
     async def __COUNTING__ (self ,ctx :commands .Context ):
         """`counting config` , `counting enable` , `counting disable` , `counting channel` , `counting reset` , `counting leaderboard` , `counting global` , `counting stats` , `counting achievements` , `counting info`
         """
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

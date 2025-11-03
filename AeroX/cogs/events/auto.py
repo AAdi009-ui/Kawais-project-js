@@ -23,9 +23,9 @@ class Autorole (Cog ):
                 f"<a:GC_z_icon_rightarrow:1374279174751125534> Use `{prefix}help` to see a list of commands\n"
                 f"<a:GC_z_icon_rightarrow:1374279174751125534> For detailed guides, FAQ, and information, visit our "
                 f"links below:\n"
-                f"🔗 [Invite Me](https://discord.com/oauth2/authorize?client_id=1372468860435042344&permissions=8&integration_type=0&scope=bot+applications.commands) "
-                f"| [Visit Website](https://landing.strelizia.space) "
-                f"| [Support Server](https://discord.gg/JxCFmz9nZP)"
+                f"🔗 [Invite Me](https://discord.com/oauth2/authorize?client_id=1334779531864572007) "
+                f"| [Visit Website](https://kawaiscans.site/) "
+                f"| [Kawai Scans Server](https://discord.gg/kawaiscans)"
                 ),
                 color =0x0d0d0e 
                 )
@@ -42,9 +42,3 @@ class Autorole (Cog ):
                     await entry .user .send (embed =embed )
                 except Exception as e :
                     print (f"Failed to send welcome message: {e}")
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""

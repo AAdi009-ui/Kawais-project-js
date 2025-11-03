@@ -4022,9 +4022,3 @@ class Giveaway (commands .Cog ):
 
 async def setup (bot ):
     await bot .add_cog (Giveaway (bot ))
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""

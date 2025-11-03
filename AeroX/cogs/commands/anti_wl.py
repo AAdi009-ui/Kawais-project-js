@@ -165,7 +165,7 @@ class Whitelist (commands .Cog ):
         embed .add_field (name ="**Executor**",value =f"<@!{ctx.author.id}>",inline =True )
         embed .add_field (name ="**Target**",value =f"<@!{member.id}>",inline =True )
         embed .set_thumbnail (url =self .bot .user .avatar .url )
-        embed .set_footer (text =f"Developed by AeroX Development")
+        embed .set_footer (text =f"Made by kyzen")
 
         msg =await ctx .send (embed =embed ,view =view )
 
@@ -206,7 +206,7 @@ class Whitelist (commands .Cog ):
                 embed .add_field (name ="**Executor**",value =f"<@!{ctx.author.id}>",inline =True )
                 embed .add_field (name ="**Target**",value =f"<@!{member.id}>",inline =True )
                 embed .set_thumbnail (url =self .bot .user .avatar .url )
-                embed .set_footer (text =f"Developed by AeroX Development")
+                embed .set_footer (text =f"Made by kyzen")
 
                 await interaction .response .edit_message (embed =embed ,view =None )
             else :
@@ -250,7 +250,7 @@ class Whitelist (commands .Cog ):
                 embed .add_field (name ="**Executor**",value =f"<@!{ctx.author.id}>",inline =True )
                 embed .add_field (name ="**Target**",value =f"<@!{member.id}>",inline =True )
                 embed .set_thumbnail (url =self .bot .user .avatar .url )
-                embed .set_footer (text =f"Developed by AeroX Development")
+                embed .set_footer (text =f"Made by kyzen")
 
                 await interaction .response .edit_message (embed =embed ,view =None )
         except TimeoutError :
@@ -400,15 +400,3 @@ class Whitelist (commands .Cog ):
         )
         await ctx .send (embed =embed )
 
-"""
-@Author: Aegis
-    + Discord: Solcodez
-    + Community: https://discord.strelix.xyz (AeroX Development)
-    + for any queries reach out Community or DM me.
-"""
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""

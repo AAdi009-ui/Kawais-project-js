@@ -47,7 +47,7 @@ BADGE_NAMES ={
 }
 
 
-db_folder ='db'
+db_folder ='../db'
 db_file ='badges.db'
 db_path =os .path .join (db_folder ,db_file )
 FONT_PATH =os .path .join ('utils','arial.ttf')
@@ -222,22 +222,39 @@ class Owner (commands .Cog ):
             aegis =discord .Embed (title ="<:icon_tick:1372375089668161597>Quantum Staffs",description =f"\n{staff_display}",color =0x000000 )
             await ctx .send (embed =aegis )
 
-    @commands .command (name ="slist")
-    @commands .check (is_owner_or_staff )
+    @commands .command (name ="slist",aliases =["servers","guilds","guildlist"])
+    @commands .is_owner ()
     async def _slist (self ,ctx ):
-        servers =sorted (self .client .guilds ,key =lambda g :g .member_count ,reverse =True )
-        entries =[
-        f"`#{i}` | [{g.name}](https://discord.com/guilds/{g.id}) - {g.member_count}"
-        for i ,g in enumerate (servers ,start =1 )
-        ]
-        paginator =Paginator (source =DescriptionEmbedPaginator (
-        entries =entries ,
-        description ="",
-        title =f"Guild List of Strelizia-bot [{len(self.client.guilds)}]",
-        color =0x000000 ,
-        per_page =10 ),
-        ctx =ctx )
-        await paginator .paginate ()
+        try :
+            if not self .client .guilds :
+                await ctx .send (embed =discord .Embed (description ="No servers found.",color =0x000000 ))
+                return 
+            
+            servers =sorted (self .client .guilds ,key =lambda g :g .member_count ,reverse =True )
+            entries =[
+            f"`#{i}` | [{g.name}](https://discord.com/channels/{g.id}) - {g.member_count} members"
+            for i ,g in enumerate (servers ,start =1 )
+            ]
+            
+            if not entries :
+                await ctx .send (embed =discord .Embed (description ="No servers to display.",color =0x000000 ))
+                return 
+            
+            paginator =Paginator (source =DescriptionEmbedPaginator (
+            entries =entries ,
+            description ="",
+            title =f"Guild List of Cipher-bot [{len(self.client.guilds)}]",
+            color =0x000000 ,
+            per_page =10 ),
+            ctx =ctx )
+            await paginator .paginate ()
+        except Exception as e :
+            await ctx .send (embed =discord .Embed (
+            description =f"❌ Error: {str(e)}\n\n**Debug Info:**\n- Guilds count: {len(self.client.guilds) if self.client.guilds else 0}\n- Command: {ctx.command.name}",
+            color =0xFF0000 
+            ))
+            import traceback 
+            traceback .print_exc ()
 
 
     @commands .command (name ="mutuals",aliases =["mutual"])
@@ -296,7 +313,7 @@ class Owner (commands .Cog ):
     @commands .command (name ="S.reboot",help ="Restarts the client.")
     @commands .is_owner ()
     async def _restart (self ,ctx :Context ):
-        await ctx .reply ("Rebooting Strelizia...")
+        await ctx .reply ("Rebooting Cipher...")
         restart_program ()
 
     @commands .command (name ="sync",help ="Syncs all database.")
@@ -332,17 +349,17 @@ class Owner (commands .Cog ):
 
 
         embed =discord .Embed (
-        title ="🌸 Strelizia Update Time 🌸",
+        title ="🌸 Cipher Update Time 🌸",
         description =message ,
         color =0x00d4ff ,
         timestamp =discord .utils .utcnow ()
         )
         embed .set_author (
-        name ="AeroX Development Team",
+        name ="Cipher",
         icon_url =self .client .user .avatar .url if self .client .user .avatar else self .client .user .default_avatar .url 
         )
         embed .set_footer (
-        text ="Important announcement from the development team",
+        text ="Important announcement from kyzen",
         icon_url =self .client .user .avatar .url if self .client .user .avatar else self .client .user .default_avatar .url 
         )
 
@@ -427,7 +444,7 @@ class Owner (commands .Cog ):
         ]
         paginator =Paginator (source =DescriptionEmbedPaginator (
         entries =entries ,
-        title =f"Strelizia Owners [{len(nplist)}]",
+        title =f"Cipher Owners [{len(nplist)}]",
         description ="",
         per_page =10 ,
         color =0x000000 ),
@@ -848,7 +865,7 @@ class Badges (commands .Cog ):
     @commands .cooldown (1 ,3 ,commands .BucketType .user )
     async def badges (self ,ctx ,member :discord .Member =None ):
 
-        processing_message =await ctx .send ("<a:strelizia_loading:1372527554761855038> Loading your profile...")
+        processing_message =await ctx .send ("<a:cipher_loading:1372527554761855038> Loading your profile...")
 
         member =member or ctx .author 
         user_id =member .id 
@@ -1050,16 +1067,3 @@ class Badges (commands .Cog ):
 
 
 
-
-"""
-@Author: Aegis
-    + Discord: Solcodez
-    + Community: https://discord.strelix.xyz (AeroX Development)
-    + for any queries reach out Community or DM me.
-"""
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""

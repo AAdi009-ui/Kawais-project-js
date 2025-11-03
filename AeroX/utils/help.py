@@ -261,9 +261,4 @@ class View (discord .ui .View ):
 
     async def set_last_page (self ,interaction :discord .Interaction ):
         await self .set_page (len (self .options )-1 ,interaction )
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

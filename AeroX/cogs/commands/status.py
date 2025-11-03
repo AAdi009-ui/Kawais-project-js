@@ -15,7 +15,7 @@ class Status (commands .Cog ):
     @commands .cooldown (1 ,3 ,commands .BucketType .user )
     async def status (self ,ctx ,user :discord .User =None ):
         user =user or ctx .author 
-        processing =await ctx .send ("<a:Strelizia_loading:1373173756113195081> Loading Status...")
+        processing =await ctx .send ("<a:Cipher_loading:1373173756113195081> Loading Status...")
         embed =discord .Embed (title =f"{user.display_name}'s Status",color =0x000000 )
 
         status_emoji ={
@@ -150,15 +150,5 @@ class Status (commands .Cog ):
                 activity_list .append (f"{activity.type.name.capitalize()} {activity.name}")
         return "\n".join (activity_list )if activity_list else None 
 
-"""
-@Author: Aegis
-    + Discord: Solcodez
-    + Community: https://discord.strelix.xyz (AeroX Development)
-    + for any queries reach out Community or DM me.
-"""
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+
+

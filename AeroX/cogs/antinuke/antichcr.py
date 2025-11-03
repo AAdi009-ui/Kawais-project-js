@@ -113,9 +113,4 @@ class AntiChannelCreate (commands .Cog ):
                 await asyncio .sleep (2 )
 
             await self .delete_channel_and_ban (channel ,executor ,delay =1 )
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

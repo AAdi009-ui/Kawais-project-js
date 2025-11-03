@@ -142,16 +142,5 @@ class HelpSlash (Cog ,name ="helpslash"):
 async def setup (client ):
     await client .add_cog (HelpSlash (client ))
 
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
 
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

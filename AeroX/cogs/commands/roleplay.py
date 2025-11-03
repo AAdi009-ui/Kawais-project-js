@@ -346,9 +346,4 @@ class Roleplay (Cog ,name ="roleplay"):
 
 async def setup (client :Strelizia ):
     await client .add_cog (Roleplay (client ))
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

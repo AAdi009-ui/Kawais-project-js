@@ -9,7 +9,7 @@ from .ai import _ai
 from .server import _server 
 from .roleplay import RoleplayHelp 
 from .verification import VerificationHelp 
-from .ytverify import YTVerifyHelp 
+ 
 from .tracking import _tracking 
 from .logging import _logging 
 from .counting import _counting 
@@ -23,7 +23,7 @@ __all__ =[
 '_server',
 'RoleplayHelp',
 'VerificationHelp',
-'YTVerifyHelp',
+
 '_tracking',
 '_logging',
 '_counting',

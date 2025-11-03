@@ -282,10 +282,10 @@ class Automod (commands .Cog ):
 
             try :
                 for channel in interaction .guild .channels :
-                    if channel .name =="Strelizia-automod":
-                        await interaction .response .send_message (f"A logging channel with the name \"Strelizia-automod\" already exists.",ephemeral =True )
+                    if channel .name =="Cipher-automod":
+                        await interaction .response .send_message (f"A logging channel with the name \"Cipher-automod\" already exists.",ephemeral =True )
                         return 
-                log_channel =await interaction .guild .create_text_channel ("Strelizia-automod",overwrites =overwrites )
+                log_channel =await interaction .guild .create_text_channel ("Cipher-automod",overwrites =overwrites )
                 guild_id =interaction .guild .id 
 
                 async with aiosqlite .connect ("db/automod.db")as db :
@@ -938,15 +938,5 @@ class Automod (commands .Cog ):
             await db .execute ("DELETE FROM automod_logging WHERE guild_id = ?",(guild_id ,))
             await db .commit ()
 
-"""
-@Author: Aegis
-    + Discord: Solcodez
-    + Community: https://discord.strelix.xyz (AeroX Development)
-    + for any queries reach out Community or DM me.
-"""
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+
+

@@ -132,15 +132,5 @@ class FilterCog (commands .Cog ):
         self .active_filters .pop (ctx .guild .id ,None )
         await ctx .send (embed =discord .Embed (description ="Filter disabled.",color =discord .Color .red ()))
 
-"""
-@Author: Aegis
-    + Discord: Solcodez
-    + Community: https://discord.strelix.xyz (AeroX Development)
-    + for any queries reach out Community or DM me.
-"""
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+
+

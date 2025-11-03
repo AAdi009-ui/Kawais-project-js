@@ -1,0 +1,10 @@
+2025-11-01 10:36:55,619 ERROR:Error in command setup girl invoked by aadi.2 (1035500738572451891): role is a required argument that is missing.
+NoneType: None
+2025-11-01 10:38:16,437 ERROR:Error in command setup staff invoked by aadi.2 (1035500738572451891): role is a required argument that is missing.
+NoneType: None
+2025-11-01 10:40:27,375 ERROR:Error in command setup create invoked by aadi.2 (1035500738572451891): role is a required argument that is missing.
+NoneType: None
+2025-11-03 09:52:01,338 ERROR:Error in command clear invoked by aadi.2 (1035500738572451891): 404 Not Found (error code: 10008): Unknown Message
+NoneType: None
+2025-11-03 09:52:01,816 ERROR:Failed to send error message for command clear: 400 Bad Request (error code: 50035): Invalid Form Body
+In message_reference: Unknown message

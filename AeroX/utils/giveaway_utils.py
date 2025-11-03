@@ -234,9 +234,4 @@ def format_duration (seconds :int )->str :
     else :
         return f"{', '.join(parts[:-1])}, and {parts[-1]}"
 
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

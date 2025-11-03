@@ -155,16 +155,16 @@ class Antinuke (commands .Cog ):
           return 
 
         await asyncio .sleep (1 )
-        setup_embed .description +="\n<a:strelizia_loading:1372527554761855038> Checking Strelizia-bot's role position for optimal configuration..."
+        setup_embed .description +="\n<a:cipher_loading:1372527554761855038> Checking Cipher-bot's role position for optimal configuration..."
         await setup_message .edit (embed =setup_embed )
 
         await asyncio .sleep (1 )
-        setup_embed .description +="\n<a:strelizia_loading:1372527554761855038> | Crafting and configuring the Strelizia Unstoppable Power role..."
+        setup_embed .description +="\n<a:cipher_loading:1372527554761855038> | Crafting and configuring the Cipher Unstoppable Power role..."
         await setup_message .edit (embed =setup_embed )
 
         try :
           role =await ctx .guild .create_role (
-          name ="Strelizia Unstoppable Power",
+          name ="Cipher Unstoppable Power",
           color =0x0ba7ff ,
           permissions =discord .Permissions (administrator =True ),
           hoist =False ,
@@ -182,7 +182,7 @@ class Antinuke (commands .Cog ):
           return 
 
         await asyncio .sleep (1 )
-        setup_embed .description +="\n<a:strelizia_loading:1372527554761855038> Ensuring precise placement of the Strelizia Unstoppable Power role..."
+        setup_embed .description +="\n<a:cipher_loading:1372527554761855038> Ensuring precise placement of the Cipher Unstoppable Power role..."
         await setup_message .edit (embed =setup_embed )
         try :
           await ctx .guild .edit_role_positions (positions ={role :1 })
@@ -196,11 +196,11 @@ class Antinuke (commands .Cog ):
           return 
 
         await asyncio .sleep (1 )
-        setup_embed .description +="\n<a:strelizia_loading:1372527554761855038> | Safeguarding your changes..."
+        setup_embed .description +="\n<a:cipher_loading:1372527554761855038> | Safeguarding your changes..."
         await setup_message .edit (embed =setup_embed )
 
         await asyncio .sleep (1 )
-        setup_embed .description +="\<a:Strelizia_loading:1373173756113195081> | Activating the Antinuke Modules for enhanced security...!!"
+        setup_embed .description +="<a:Cipher_loading:1373173756113195081> | Activating the Antinuke Modules for enhanced security...!!"
         await setup_message .edit (embed =setup_embed )
 
         await self .db .execute ('INSERT OR REPLACE INTO antinuke (guild_id, status) VALUES (?, ?)',(guild_id ,True ))
@@ -226,9 +226,9 @@ class Antinuke (commands .Cog ):
 
         embed .add_field (name ='',value ="<:disable_no:1372374999310274600><:enable_yes:1372375008441143417> **Anti Prune**\n **Auto Recovery**")
 
-        embed .set_author (name ="Strelizia-bot Antinuke",icon_url =self .bot .user .avatar .url )
+        embed .set_author (name ="Cipher-bot Antinuke",icon_url =self .bot .user .avatar .url )
 
-        embed .set_footer (text ="Successfully Enabled Antinuke for this server | Powered by AeroX Development",icon_url =self .bot .user .avatar .url )
+        embed .set_footer (text ="Successfully Enabled Antinuke for this server | Made by kyzen",icon_url =self .bot .user .avatar .url )
         embed .set_thumbnail (url =self .bot .user .avatar .url )
 
         view =discord .ui .View ()
@@ -293,15 +293,5 @@ class Antinuke (commands .Cog ):
 async def setup (bot ):
   await bot .add_cog (Antinuke (bot ))
 
-"""
-@Author: Aegis
-    + Discord: Solcodez
-    + Community: https://discord.strelix.xyz (AeroX Development)
-    + for any queries reach out Community or DM me.
-"""
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+
+

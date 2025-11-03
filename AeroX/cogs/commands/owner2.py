@@ -597,15 +597,5 @@ class Global (commands .Cog ):
             await ctx .send (f"<:icon_cross:1372375094336425986> | {member.mention}'s nickname is not currently being frozen.")
 
 
-"""
-@Author: Aegis
-    + Discord: Solcodez
-    + Community: https://discord.strelix.xyz (AeroX Development)
-    + for any queries reach out Community or DM me.
-"""
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+
+

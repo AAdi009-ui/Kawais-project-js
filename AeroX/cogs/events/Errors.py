@@ -122,6 +122,13 @@ class Errors (Cog ):
 
 
             if isinstance (error ,commands .CheckFailure ):
+                # Check if it's an owner-only command
+                if hasattr (ctx .command ,'checks')and any (check .__name__ =='is_owner'for check in ctx .command .checks ):
+                    await ctx .reply (
+                    f"{ctx.author.mention} ❌ This command is restricted to **bot owners only**.",
+                    delete_after =10 
+                    )
+                    return 
 
                 try :
                     data =await get_ignore_data (ctx .guild .id )
@@ -364,9 +371,4 @@ class Errors (Cog ):
         except Exception as e :
             logger .error (f"Failed to send slash command error message: {e}")
 
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

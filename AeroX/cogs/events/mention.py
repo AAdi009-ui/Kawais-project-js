@@ -16,7 +16,7 @@ class Mention (commands .Cog ):
 
         self .color =0x000000 
 
-        self .bot_name ="Strelizia"
+        self .bot_name ="Cipher"
 
     async def is_blacklisted (self ,message ):
 
@@ -80,7 +80,7 @@ class Mention (commands .Cog ):
                 description =(
                 f"**Greetings, <@{message.author.id}>**\n"
                 f"**Prefix for this server:** `{prefix}`\n\n"
-                f"> `Strelizia is a refined and intelligent presence—elegant, calm, and built to empower your server.`\n"
+                f"> `Cipher is a refined and intelligent presence—elegant, calm, and built to empower your server.`\n"
                 f"> `She listens when needed, acts with precision, and adds a layer of style to every interaction.`\n"
                 f"> `From moderation to utility, she does it all—quietly, efficiently, and beautifully.`\n"
                 f"> `Not just a bot. A companion.`\n\n"
@@ -98,9 +98,4 @@ class Mention (commands .Cog ):
                 )
                 embed .timestamp =discord .utils .utcnow ()
                 await message .channel .send (embed =embed )
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

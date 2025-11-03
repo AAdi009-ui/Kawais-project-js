@@ -93,7 +93,7 @@ def print_system_ready ():
     """Print the final system ready message"""
     print_elegant_separator ()
     print (f"\n   {Colors.BOLD}{Colors.STRELIZIA_PURPLE}✦ System Operational ✦{Colors.RESET}")
-    print (f"   {Colors.DIM}{Colors.WHITE}Developed with {Colors.STRELIZIA_PINK}♡{Colors.WHITE} by AeroX Development{Colors.RESET}")
+    print (f"   {Colors.DIM}{Colors.WHITE}Developed with {Colors.STRELIZIA_PINK}♡{Colors.WHITE} by kyzenn{Colors.RESET}")
     print (f"   {Colors.DIM}{Colors.DARK_GRAY}Ready to serve with elegance and precision{Colors.RESET}\n")
     print_elegant_separator ()
     print ()
@@ -188,7 +188,7 @@ class TicketBot (Strelizia ):
                     ping_role_id INTEGER,
                     embed_title TEXT DEFAULT 'Create a Ticket',
                     embed_description TEXT DEFAULT 'Need assistance? Select a category below to create a ticket, and our support team will assist you shortly! 📩',
-                    embed_footer TEXT DEFAULT 'Powered by AeroX Development',
+                    embed_footer TEXT DEFAULT 'Powered by Cipher',
                     embed_image_url TEXT,
                     embed_color INTEGER DEFAULT 16711680,
                     panel_type TEXT DEFAULT 'dropdown'
@@ -218,7 +218,7 @@ class TicketBot (Strelizia ):
                                 ping_role_id INTEGER,
                                 embed_title TEXT DEFAULT 'Create a Ticket',
                                 embed_description TEXT DEFAULT 'Need assistance? Select a category below to create a ticket, and our support team will assist you shortly! 📩',
-                                embed_footer TEXT DEFAULT 'Powered by AeroX Development',
+                                embed_footer TEXT DEFAULT 'Powered by Cipher',
                                 embed_image_url TEXT,
                                 embed_color INTEGER DEFAULT 16711680,
                                 panel_type TEXT DEFAULT 'dropdown'
@@ -505,9 +505,4 @@ if __name__ =='__main__':
     except Exception as e :
         print_error (f"Critical error: {e}")
         sys .exit (1 )
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

@@ -48,9 +48,4 @@ class React (commands .Cog ):
                 except Exception as e :
                     print (f"An unexpected error occurred Auto react owner mention: {e}")
 
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

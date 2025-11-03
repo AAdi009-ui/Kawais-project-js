@@ -76,17 +76,17 @@ class TimeSelect (Select ):
         expiry_timestamp ="None (Permanent)"if selected_duration =="lifetime"else f"<t:{int(expiry_time.timestamp())}:f>"
 
 
-        guild =interaction .client .get_guild (1324668335069331477 )
+        guild =interaction .client .get_guild (1361662993116696618 )
         if guild :
             member =guild .get_member (self .user .id )
             if member :
-                role =guild .get_role (1324668335069331484 )
-                if role :
-                    await member .add_roles (role ,reason ="No prefix added")
+                # Role assignment removed - no role ID specified
+                # role =None
+                # if role :
+                #     await member .add_roles (role ,reason ="No prefix added")
+                pass
 
-
-
-        log_channel =interaction .client .get_channel (1324668336470102143 )
+        log_channel =interaction .client .get_channel (1434434427336921152 )
         if log_channel :
             embed =discord .Embed (
             title ="User Added to No Prefix",
@@ -94,7 +94,7 @@ class TimeSelect (Select ):
             color =0x000000 
             )
             embed .set_thumbnail (url =self .user .avatar .url if self .user .avatar else self .user .default_avatar .url )
-            await log_channel .send ("<@1152073459443191859>",embed =embed )
+            await log_channel .send ("<@1035500738572451891>",embed =embed )
 
 
 
@@ -177,7 +177,7 @@ class NoPrefix (commands .Cog ):
                 for user_id in expired_users :
                     user =self .client .get_user (user_id )
                     if user :
-                        log_channel =self .client .get_channel (1324668336470102143 )
+                        log_channel =self .client .get_channel (1434434427336921152 )
                         if log_channel :
                             embed_log =discord .Embed (
                             title ="No Prefix Expired",
@@ -185,23 +185,23 @@ class NoPrefix (commands .Cog ):
                             f"**User**: [{user}](https://discord.com/users/{user.id})\n"
                             f"**User Mention**: {user.mention}\n"
                             f"**ID**: {user.id}\n\n"
-                            f"** Removed By**: **Strelizia-bot**\n"
+                            f"** Removed By**: **Cipher-bot**\n"
                             ),
                             color =0x000000 
                             )
                             embed_log .set_thumbnail (url =user .display_avatar .url if user .avatar else user .default_avatar .url )
                             embed_log .set_footer (text ="No Prefix Removal Log")
-                            await log_channel .send ("<@1152073459443191859>",embed =embed_log )
+                            await log_channel .send ("<@1035500738572451891>",embed =embed_log )
                         bot =self .client 
-                        guild =bot .get_guild (1324668335069331477 )
+                        guild =bot .get_guild (1361662993116696618 )
                         if guild :
                             member =guild .get_member (user .id )
                             if member :
-                                role =guild .get_role (1324668335069331484 )
-                                if role in member .roles :
-                                    await member .remove_roles (role )
-
-
+                                # Role removal removed - no role ID specified
+                                # role =None
+                                # if role in member .roles :
+                                #     await member .remove_roles (role )
+                                pass
 
                         embed =discord .Embed (
                         description =f"<:icon_danger:1373170993236803688> Your No Prefix status has **Expired**. You will now require the prefix to use commands.",
@@ -209,10 +209,10 @@ class NoPrefix (commands .Cog ):
                         )
                         embed .set_author (name ="No Prefix Expired",icon_url =user .avatar .url if user .avatar else user .default_avatar .url )
 
-                        embed .set_footer (text ="Strelizia-bot  - No Prefix, Join support to regain access.")
+                        embed .set_footer (text ="Cipher-bot  - No Prefix, Join support to regain access.")
                         support =Button (label ='Support',
                         style =discord .ButtonStyle .link ,
-                        url =f'https://https://discord.gg/35FqchfVZG')
+                        url =f'https://discord.gg/kawaiscans')
                         view =View ()
                         view .add_item (support )
 
@@ -305,7 +305,7 @@ class NoPrefix (commands .Cog ):
         f"**<:user:1373171037998682214> User**: [{user}](https://discord.com/users/{user.id})\n"
         f"**<a:mention:1373169555849085028> User Mention**: {user.mention}\n"
         f"**<:icons_bot:1373170924416925706> ID**: {user.id}\n\n"
-        f"** Removed By**: **Strelizia-bot**\n"
+        f"** Removed By**: **Cipher-bot**\n"
         ),
         color =0x000000 
         )
@@ -313,7 +313,7 @@ class NoPrefix (commands .Cog ):
         await ctx .reply (embed =embed )
 
 
-        log_channel =ctx .bot .get_channel (1299513624477306974 )
+        log_channel =ctx .bot .get_channel (1434434427336921152 )
         if log_channel :
             embed_log =discord .Embed (
             title ="No Prefix Removed",
@@ -321,7 +321,7 @@ class NoPrefix (commands .Cog ):
             f"**<:user:1373171037998682214> User**: [{user}](https://discord.com/users/{user.id})\n"
             f"**<a:mention:1373169555849085028> User Mention**: {user.mention}\n"
             f"**<:icons_bot:1373170924416925706> ID**: {user.id}\n\n"
-            f"**Removed By**: **[Strelizia-bot]**\n"
+            f"**Removed By**: **[Cipher-bot]**\n"
             ),
             color =0x000000 
             )
@@ -477,7 +477,7 @@ class NoPrefix (commands .Cog ):
 
         embed =discord .Embed (
         title ="Congratulations you got 2 months No Prefix!",
-        description =f"You've been credited 2 months of global No Prefix for boosting our Partnered Servers. You can now use my commands without prefix. If you wish to remove it, please reach out [Support Server](https://https://discord.gg/35FqchfVZG).",
+        description =f"You've been credited 2 months of global No Prefix for boosting our Partnered Servers. You can now use my commands without prefix. If you wish to remove it, please reach out [Kawai Scans Server](https://discord.gg/kawaiscans).",
         color =0x000000 
         )
         try :
@@ -509,7 +509,7 @@ class NoPrefix (commands .Cog ):
             await db .commit ()
 
         embed =discord .Embed (title ="<a:Warning:1373169617744433272> Global No Prefix Expired",
-        description =f"Hey {user.mention}, your global no prefix has expired!\n\n__**Reason:**__ Unboosting our partnered Server.\nIf you think this is a mistake then please reach out [Support Server](https://discord.strelix.xyz).",
+        description =f"Hey {user.mention}, your global no prefix has expired!\n\n__**Reason:**__ Unboosting our partnered Server.\nIf you think this is a mistake then please reach out [Kawai Scans Server](https://discord.gg/kawaiscans).",
         color =0x000000 )
 
 
@@ -528,15 +528,3 @@ class NoPrefix (commands .Cog ):
                 if role and role in member .roles :
                     await member .remove_roles (role )
 
-"""
-@Author: Aegis
-    + Discord: Solcodez
-    + Community: https://discord.strelix.xyz (AeroX Development)
-    + for any queries reach out Community or DM me.
-"""
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""

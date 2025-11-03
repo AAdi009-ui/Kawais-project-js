@@ -219,7 +219,7 @@ class AdvancedTicketSystem (commands .Cog ):
                                 ping_role_id INTEGER,
                                 embed_title TEXT DEFAULT '🎫 Create a Support Ticket',
                                 embed_description TEXT DEFAULT 'Need help? Click the button below to create a ticket and our support team will assist you!',
-                                embed_footer TEXT DEFAULT 'Powered by AeroX Development',
+                                embed_footer TEXT DEFAULT 'Made by kyzen',
                                 embed_color INTEGER DEFAULT 0,
                                 embed_image TEXT,
                                 embed_thumbnail TEXT
@@ -477,8 +477,8 @@ class AdvancedTicketSystem (commands .Cog ):
     def create_branded_embed (self ,title :str ,description :str =None ,color :int =0x000000 )->discord .Embed :
         """Create a consistently branded embed"""
         embed =discord .Embed (title =title ,description =description ,color =color )
-        embed .set_author (name ="Strelizia Ticket System",icon_url =self .bot .user .avatar .url if self .bot .user .avatar else None )
-        embed .set_footer (text ="Developed By AeroX Development",icon_url =self .bot .user .avatar .url if self .bot .user .avatar else None )
+        embed .set_author (name ="Cipher Ticket System",icon_url =self .bot .user .avatar .url if self .bot .user .avatar else None )
+        embed .set_footer (text ="Made by kyzen",icon_url =self .bot .user .avatar .url if self .bot .user .avatar else None )
         embed .timestamp =datetime .datetime .utcnow ()
         return embed 
 
@@ -527,7 +527,7 @@ class AdvancedTicketSystem (commands .Cog ):
                 )
                 embed .set_thumbnail (url =creator .display_avatar .url )
                 embed .set_footer (
-                text ="Thanks for using Strelizia ❤️",
+                text ="Thanks for using Cipher ❤️",
                 icon_url =self .bot .user .avatar .url if self .bot .user .avatar else None 
                 )
                 embed .timestamp =datetime .datetime .utcnow ()
@@ -561,7 +561,7 @@ class AdvancedTicketSystem (commands .Cog ):
 
                 embed .set_thumbnail (url =claimer .display_avatar .url )
                 embed .set_footer (
-                text ="Thanks for using Strelizia ❤️",
+                text ="Thanks for using Cipher ❤️",
                 icon_url =self .bot .user .avatar .url if self .bot .user .avatar else None 
                 )
                 embed .timestamp =datetime .datetime .utcnow ()
@@ -593,7 +593,7 @@ class AdvancedTicketSystem (commands .Cog ):
                 )
                 embed .set_thumbnail (url =self .bot .user .avatar .url if self .bot .user .avatar else None )
                 embed .set_footer (
-                text ="Thanks for using Strelizia ❤️",
+                text ="Thanks for using Cipher ❤️",
                 icon_url =self .bot .user .avatar .url if self .bot .user .avatar else None 
                 )
                 embed .timestamp =datetime .datetime .utcnow ()
@@ -657,7 +657,7 @@ class AdvancedTicketSystem (commands .Cog ):
                     )
 
                 embed .set_footer (
-                text ="Thanks for using Strelizia ❤️",
+                text ="Thanks for using Cipher ❤️",
                 icon_url =self .bot .user .avatar .url if self .bot .user .avatar else None 
                 )
                 embed .timestamp =datetime .datetime .utcnow ()
@@ -1307,7 +1307,7 @@ class AdvancedTicketSystem (commands .Cog ):
             if guild and guild .icon :
                 embed .set_thumbnail (url =guild .icon .url )
 
-            embed .set_footer (text ="Thanks for using Strelizia ❤️")
+            embed .set_footer (text ="Thanks for using Cipher ❤️")
 
 
             view =RatingSelectView (ticket_info ,transcript )
@@ -1498,7 +1498,7 @@ class AdvancedTicketSystem (commands .Cog ):
             welcome_embed =discord .Embed (
             title ="<:icon_tick:1372375089668161597> Your Ticket Has Been Created!",
             description =f"Hey {interaction.user.mention}! Thanks for opening a ticket <a:_rose:1367348649381859490>\n"
-            f"Our team will be with you as soon as possible — hang tight! <:heart_em:1274781856406962250>\n"
+            f"Support will be with you as soon as possible — hang tight! <:heart_em:1274781856406962250>\n"
             f"In the meantime, feel free to describe your issue in more detail <:Heeriye:1274769360560328846>",
             color =0xFFB6C1 
             )
@@ -1522,7 +1522,7 @@ class AdvancedTicketSystem (commands .Cog ):
             )
 
             welcome_embed .set_footer (
-            text ="Developed By AeroX Development",
+            text ="Made by kyzen",
             icon_url =self .bot .user .avatar .url if self .bot .user .avatar else None 
             )
             welcome_embed .timestamp =created_time 
@@ -1663,10 +1663,10 @@ class AdvancedTicketSystem (commands .Cog ):
 
             embed =discord .Embed (
             title =config [0 ]or "🎫 Create a Support Ticket",
-            description =config [1 ]or "Need help? Click the button below to create a ticket and our support team will assist you!",
+            description =config [1 ]or "Need help? Click the button below to create a ticket and we will assist you!",
             color =config [3 ]or 0x000000 
             )
-            embed .set_footer (text =config [2 ]or "Developed By AeroX Development")
+            embed .set_footer (text =config [2 ]or "Made by kyzen")
             embed .timestamp =datetime .datetime .utcnow ()
 
 
@@ -1837,8 +1837,8 @@ class TicketSetupView (discord .ui .View ):
                 main_category .id ,
                 log_channel .id if log_channel else None ,
                 "🎫 Create a Support Ticket",
-                "Need help? Click the button below to create a ticket and our support team will assist you!",
-                "Developed By AeroX Development",
+                "Need help? Click the button below to create a ticket and we will assist you!",
+                "Made by kyzen",
                 0x000000 ,
                 None ,
                 None 
@@ -1935,7 +1935,7 @@ class PanelCustomizationModal (discord .ui .Modal ):
         self .panel_description =discord .ui .TextInput (
         label ="Panel Description",
         placeholder ="Need help? Click the button below to create a ticket...",
-        default ="Need help? Click the button below to create a ticket and our support team will assist you!",
+        default ="Need help? Click the button below to create a ticket and we will assist you!",
         style =discord .TextStyle .paragraph ,
         max_length =2048 
         )
@@ -2962,7 +2962,7 @@ class TicketAuthorInfoView (discord .ui .View ):
                 )
 
             embed .set_footer (
-            text ="Developed By AeroX Development",
+            text ="Made by kyzen",
             icon_url =interaction .client .user .avatar .url if interaction .client .user .avatar else None 
             )
 
@@ -3017,9 +3017,3 @@ async def setup (bot ):
         logger .error (f"Error adding persistent views: {e}")
         import traceback 
         logger .error (f"Persistent view setup traceback: {traceback.format_exc()}")
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""

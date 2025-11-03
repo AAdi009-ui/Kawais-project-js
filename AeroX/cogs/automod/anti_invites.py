@@ -135,9 +135,4 @@ class AntiInvite (commands .Cog ):
         await asyncio .sleep (1 )(10 )
 
 
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

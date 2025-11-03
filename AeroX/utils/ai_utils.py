@@ -196,9 +196,4 @@ async def text_to_speech (text ):
     tts .write_to_fp (bytes_obj )
     bytes_obj .seek (0 )
     return bytes_obj 
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

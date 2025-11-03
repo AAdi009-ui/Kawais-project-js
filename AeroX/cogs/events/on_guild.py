@@ -22,7 +22,7 @@ class Guild (Cog ):
     async def on_guild_add (self ,guild :discord .Guild ):
         try :
             rope =[inv for inv in await guild .invites ()if inv .max_age ==0 and inv .max_uses ==0 ]
-            ch =1324668336470102141 
+            ch =1434434427336921152 
             me =self .client .get_channel (ch )
             if me is None :
                 logging .error (f"Channel with ID {ch} not found.")
@@ -85,20 +85,20 @@ class Guild (Cog ):
             description =(
             f"<:icon_right_arrow:1367338299076902932> Prefix For This Server is `{prefix}`\n"
             f"<:icon_right_arrow:1367338299076902932> Get Started with `{prefix}help`\n"
-            f"<:icon_right_arrow:1367338299076902932> For guides, FAQ & help, join our **[Support Server](https://landing.strelizia.space)**"
+            f"<:icon_right_arrow:1367338299076902932> For guides, FAQ & help, visit our **[Website](https://kawaiscans.site/)**"
             ),
             color =0xff0000 
             )
             welcome_embed .set_author (name ="Thanks for adding me!",icon_url =guild .me .display_avatar .url )
             welcome_embed .set_footer (
-            text ="Powered by AeroX Development",
+            text ="Made by kyzen",
             icon_url ="https://i.ibb.co/TxtQNnyH/2400e46b-9674-4142-b2dc-73244e769c3b.png"
             )
             if guild .icon :
                 welcome_embed .set_thumbnail (url =guild .icon .url )
 
             view =View ()
-            view .add_item (Button (label ='Support',style =discord .ButtonStyle .link ,url ='https://discord.gg/JxCFmz9nZP'))
+            view .add_item (Button (label ='Kawai Scans',style =discord .ButtonStyle .link ,url ='https://discord.gg/kawaiscans'))
 
             channel =discord .utils .get (guild .text_channels ,name ="general")
             if not channel :
@@ -118,7 +118,7 @@ class Guild (Cog ):
     @commands .Cog .listener (name ="on_guild_remove")
     async def on_guild_remove (self ,guild :discord .Guild ):
         try :
-            ch =1324668336470102141 
+            ch =1434434427336921152 
             idk =self .client .get_channel (ch )
             if idk is None :
                 logging .error (f"Channel with ID {ch} not found.")
@@ -177,9 +177,3 @@ class Guild (Cog ):
 
 
 
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""

@@ -685,15 +685,5 @@ class Voice (commands .Cog ):
         embed2 .set_thumbnail (url ="https://cdn.discordapp.com/emojis/1279464563150032991.png")
         return await ctx .reply (embed =embed2 )
 
-"""
-@Author: Aegis
-    + Discord: Solcodez
-    + Community: https://discord.strelix.xyz (AeroX Development)
-    + for any queries reach out Community or DM me.
-"""
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+
+

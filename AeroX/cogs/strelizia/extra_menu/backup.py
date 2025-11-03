@@ -31,9 +31,4 @@ class _Backup (commands .Cog ):
         if ctx .invoked_subcommand is None :
 
             await ctx .send_help (ctx .command )
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

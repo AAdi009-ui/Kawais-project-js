@@ -87,9 +87,4 @@ class AntiUnban (commands .Cog ):
 
         print (f"Failed to ban {executor.id} after multiple attempts due to rate limits.")
 
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

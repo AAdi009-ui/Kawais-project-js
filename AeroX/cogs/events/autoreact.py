@@ -51,9 +51,4 @@ class AutoReactListener (commands .Cog ):
 
                 await self .add_rate_limit (message .author .id )
                 break 
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

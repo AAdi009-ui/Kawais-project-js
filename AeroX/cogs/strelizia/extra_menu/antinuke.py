@@ -19,9 +19,4 @@ class _antinuke (commands .Cog ):
         """`antinuke` , `antinuke enable` , `antinuke disable` , `whitelist` , `whitelist @user` , `unwhitelist` , `whitelisted` , `whitelist reset` , `extraowner` , `extraowner set` , `extraowner view` , `extraowner reset`, `nightmode` , `nightmode enable` , `nightmode disable`\n\n__**Emergency Situation**__\n`emergency` , `emergency enable` , `emergency disable` , `emergency role` , `emergency role add` , `emergency role remove` , `emergency role list` , `emergency authorise` , `emergency authorise add` , `emergency authorise remove` , `emergency authorise list`\n`emergency-situation (emgs)`"""
 
 
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

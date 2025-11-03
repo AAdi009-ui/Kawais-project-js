@@ -266,9 +266,4 @@ async def validate_ticket_data (bot ,guild_id :int )->tuple [bool ,str ]:
     except Exception as e :
         logger .error (f"Error validating ticket data for guild {guild_id}: {e}")
         return False ,f"Validation error: {str(e)}"
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

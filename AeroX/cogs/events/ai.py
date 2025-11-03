@@ -33,7 +33,7 @@ class AIResponses (commands .Cog ):
             embed =discord .Embed (
             title ="💕 Hey there!",
             description =(
-            f"Hi sweetie! I'm **Strelizia**, your caring Discord companion! ✨\n\n"
+            f"Hi sweetie! I'm **Cipher**, your caring Discord companion! ✨\n\n"
             f"💬 **Chat with me**: Use `&ai <your message>` to have a conversation!\n"
             f"📚 **My commands**: Use `&help` to see all my 700+ commands!\n"
             f"🎯 **Quick help**: Use `&help <category>` for specific features\n\n"
@@ -41,7 +41,7 @@ class AIResponses (commands .Cog ):
             ),
             color =0xff69b4 
             )
-            embed .set_footer (text ="Made with love by AeroX Development 💕")
+            embed .set_footer (text ="Made with love by kyzen 💕")
             await message .reply (embed =embed ,mention_author =True )
             return 
 
@@ -57,14 +57,9 @@ class AIResponses (commands .Cog ):
         ),
         color =0xff69b4 
         )
-        embed .set_footer (text ="Powered by AeroX Development")
+        embed .set_footer (text ="Made by kyzen")
         await message .reply (embed =embed ,mention_author =True )
 
 async def setup (bot ):
     await bot .add_cog (AIResponses (bot ))
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

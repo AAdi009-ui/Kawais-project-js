@@ -1040,9 +1040,4 @@ async def generate_transcript (bot ,channel :discord .TextChannel ,ticket_info :
         logger .error (f"Error generating ultra-modern transcript: {e}")
         return f"<html><body><h1>Error generating transcript</h1><p>{str(e)}</p></body></html>"
 
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

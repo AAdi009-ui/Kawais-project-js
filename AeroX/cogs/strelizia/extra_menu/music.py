@@ -19,9 +19,4 @@ class _music (commands .Cog ):
         """`play`, `search`, `nowplaying`, `autoplay`, `loop`, `pause`, `resume`, `skip`, `shuffle`, `stop`, `volume`, `queue`, `clearqueue`, `replay`, `join`, `disconnect`, `seek`, `remove`, `move`, `lyrics`, `twentyfourseven`
 \n__Slash Commands__\n
 `music`, `music play`, `music search`, `music nowplaying`, `music autoplay`, `music loop`, `music pause`, `music resume`, `music skip`, `music shuffle`, `music stop`, `music volume`, `music queue`, `music clearqueue`, `music replay`, `music join`, `music disconnect`, `music seek`, `music remove`, `music move`, `music lyrics`, `music twentyfourseven`"""
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

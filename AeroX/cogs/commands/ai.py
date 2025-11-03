@@ -146,7 +146,7 @@ class PersonalityModal (discord .ui .Modal ,title ="Set Your AI Personality"):
         self .ai_cog =ai_cog 
 
 
-        default_prompt ="""You are Strelizia, an intelligent and caring Discord bot assistant created by solcodez and hiro.null! 💕
+        default_prompt ="""You are Cipher, an intelligent and caring Discord bot assistant created by kyzen! 💕
 
 CORE PERSONALITY:
 - Intelligent, helpful, and genuinely caring about users
@@ -194,7 +194,7 @@ Ready to have meaningful conversations and help with anything you need! 💖"""
 
         self .personality_input =discord .ui .TextInput (
         label ="Your AI Personality",
-        placeholder ="Describe how you want Strelizia to respond to you...",
+        placeholder ="Describe how you want Cipher to respond to you...",
         default =display_text ,
         style =discord .TextStyle .paragraph ,
         max_length =2000 ,
@@ -452,8 +452,16 @@ class AI (commands .Cog ):
             if roleplay_data ["awaiting_character"]:
 
                 content =message .content .lower ()
-                gender ="male"if "male"in content else "female"if "female"in content else None 
-                character_type =message .content .split (gender ,1 )[1 ].strip ()if gender else message .content .strip ()
+                # Check for "female" first since it contains "male" as substring
+                if "female"in content :
+                    gender ="female"
+                    character_type =content .replace ("female","",1 ).strip ()
+                elif "male"in content :
+                    gender ="male"
+                    character_type =content .replace ("male","",1 ).strip ()
+                else :
+                    gender =None 
+                    character_type =content .strip ()
 
                 if gender and character_type :
                     roleplay_data ["character_gender"]=gender 
@@ -468,30 +476,82 @@ class AI (commands .Cog ):
                 user_id =message .author .id 
                 if user_id not in self .conversation_history :
                     self .conversation_history [user_id ]=[]
-                self .conversation_history [user_id ].append ({"role":"user","parts":[{"text":message .content }]})
-
-                if len (self .conversation_history [user_id ])>5 :
-                    self .conversation_history [user_id ]=self .conversation_history [user_id ][-5 :]
 
                 async with message .channel .typing ():
-                    history =self .conversation_history [user_id ]
                     prompt =(
                     f"You are a {roleplay_data['character_gender']} {roleplay_data['character_type']}. "
                     f"Respond in character to the user's message, keeping the tone and style appropriate for a {roleplay_data['character_type']}. "
                     f"User's message: {message.content}"
                     )
-                    history .append ({"role":"user","parts":[{"text":prompt }]})
-                    response =await self ._get_gemini_response (prompt ,history )
+                    
+                    # Build history for Groq (uses "content" format, not "parts")
+                    history =[]
+                    
+                    # Add previous conversation (last 4 messages)
+                    for msg in self .conversation_history [user_id ][-4 :]:
+                        if isinstance (msg ,dict ):
+                            if "parts"in msg and msg ["parts"]:
+                                content =msg ["parts"][0 ].get ("text","")if isinstance (msg ["parts"][0 ],dict )else str (msg ["parts"][0 ])
+                            elif "content"in msg :
+                                content =msg ["content"]
+                            else :
+                                content =str (msg )
+                            history .append ({"role":msg .get ("role","user"),"content":content })
+                    
+                    # Add current user message
+                    history .append ({"role":"user","content":prompt })
+                    
+                    try :
+                        response =await self ._get_groq_response (prompt ,history )
+                    except Exception as groq_error :
+                        # If Groq fails (e.g., organization restricted), try Gemini as fallback
+                        if self .gemini_api_key and GEMINI_AVAILABLE :
+                            logger .warning (f"Groq API failed, falling back to Gemini: {groq_error}")
+                            gemini_history =[]
+                            for msg in self .conversation_history [user_id ][-4 :]:
+                                if isinstance (msg ,dict ):
+                                    if "parts"in msg and msg ["parts"]:
+                                        gemini_history .append (msg )
+                                    elif "content"in msg :
+                                        gemini_history .append ({"role":msg .get ("role","user"),"parts":[{"text":msg ["content"]}]})
+                            gemini_history .append ({"role":"user","parts":[{"text":prompt }]})
+                            try :
+                                response =await self ._get_gemini_response (prompt ,gemini_history )
+                            except Exception as gemini_error :
+                                await message .channel .send (
+                                    f"<@{message.author.id}> ❌ **Error**: Both Groq and Gemini APIs failed.\n"
+                                    f"**Groq Error**: {str(groq_error)[:200]}\n"
+                                    f"**Gemini Error**: {str(gemini_error)[:200]}\n\n"
+                                    f"Please check your API keys or contact support: https://discord.gg/kawaiscans"
+                                )
+                                return 
+                        else :
+                            await message .channel .send (
+                                f"<@{message.author.id}> ❌ **Groq API Error**: {str(groq_error)[:300]}\n\n"
+                                f"This usually means your Groq API key is restricted or invalid.\n"
+                                f"Please check your API key or contact support: https://discord.gg/kawaiscans"
+                            )
+                            return 
+                    
                     await self .split_and_send (
                     message .channel ,
                     f"<@{message.author.id}>​ {response}",
                     reply_to =message ,
                     allowed_mentions =discord .AllowedMentions (users =True )
                     )
+                    
+                    # Store in Gemini format for consistency with other parts of the code
+                    self .conversation_history [user_id ].append ({"role":"user","parts":[{"text":message .content }]})
                     self .conversation_history [user_id ].append ({"role":"assistant","parts":[{"text":response }]})
+                    
+                    # Keep last 10 messages
+                    if len (self .conversation_history [user_id ])>10 :
+                        self .conversation_history [user_id ]=self .conversation_history [user_id ][-10 :]
 
     async def _get_gemini_response (self ,message :str ,history :list ,user_id :int =None ,guild_id :int =None )->str :
         try :
+            if not GEMINI_AVAILABLE or genai is None :
+                return "Gemini AI is not available. Please install google-generativeai package."
             if not self .gemini_api_key :
                 return "Gemini API key not configured. Please set the GOOGLE_API_KEY environment variable."
 
@@ -550,10 +610,15 @@ class AI (commands .Cog ):
                     else :
                         error_message =await response .text ()
                         logger .error (f"Groq API error: {response.status} - {error_message}")
-                        return f"Sorry, I encountered an error while processing your request: {response.status} - {error_message}"
+                        # Raise exception so caller can handle fallback
+                        raise Exception (f"{response.status} - {error_message}")
+        except aiohttp .ClientError as e :
+            logger .error (f"Groq AI connection error: {e}")
+            raise Exception (f"Connection error: {str(e)}")
         except Exception as e :
             logger .error (f"Groq AI error: {e}")
-            return f"Sorry, I encountered an error while processing your request: {str(e)}"
+            # Re-raise to let caller handle
+            raise
 
     async def _get_response (self ,message :str ,history :list ,guild_id :int ,user_id :int =None )->str :
         try :
@@ -574,19 +639,19 @@ class AI (commands .Cog ):
 
                 system_context .append ({
                 "role":"system",
-                "content":"You are a Discord bot with many features including moderation, entertainment, music, games, AI capabilities, and utilities. Support server: https://discord.gg/JxCFmz9nZP"
+                "content":"You are a Discord bot with many features including moderation, entertainment, music, games, AI capabilities, and utilities. Server: https://discord.gg/kawaiscans"
                 })
             else :
 
                 system_context .append ({
                 "role":"system",
-                "content":f"""You are Strelizia, an intelligent Discord bot created by solcodez and hiro.null. 
+                "content":f"""You are Cipher, an intelligent Discord bot created by kyzen. 
 
 You have a caring, helpful personality and can remember conversations with users. You have many features including moderation, entertainment, music, games, AI capabilities, and utilities.
 
 Be natural, conversational, and genuine in your responses. Don't be overly formal or robotic. Use the conversation history to provide personalized responses that feel like talking to a real friend who happens to be very knowledgeable and helpful.
 
-Support server: https://discord.gg/JxCFmz9nZP"""
+Server: https://discord.gg/kawaiscans"""
                 })
 
 
@@ -683,6 +748,13 @@ Support server: https://discord.gg/JxCFmz9nZP"""
     async def analyze_image (self ,ctx ,image_url :str ):
         """Analyze an image using the Gemini Vision API and return embed"""
         try :
+            if not GEMINI_AVAILABLE or genai is None :
+                return discord .Embed (
+                title ="🖼️ Image Analysis",
+                description ="Gemini AI is not available. Please install google-generativeai package.",
+                color =0x000000 ,
+                timestamp =datetime .now (timezone .utc )
+                )
             if not self .gemini_api_key :
                 return discord .Embed (
                 title ="🖼️ Image Analysis",
@@ -868,8 +940,8 @@ Support server: https://discord.gg/JxCFmz9nZP"""
         prompt =f"Analyze the mood and sentiment of this text. Provide the overall sentiment (positive/negative/neutral), emotional tone, and a brief explanation:\n\n{text}"
 
         try :
-            history =[{"role":"user","parts":[{"text":prompt }]}]
-            analysis =await self ._get_gemini_response (prompt ,history )
+            history =[{"role":"user","content":prompt }]
+            analysis =await self ._get_groq_response (prompt ,history )
 
             embed =discord .Embed (
             title ="😊 Mood Analysis",
@@ -1417,6 +1489,13 @@ Support server: https://discord.gg/JxCFmz9nZP"""
     async def analyze_image (self ,ctx ,image_url :str ):
         """Analyze an image using the Gemini Vision API and return embed"""
         try :
+            if not GEMINI_AVAILABLE or genai is None :
+                return discord .Embed (
+                title ="🖼️ Image Analysis",
+                description ="Gemini AI is not available. Please install google-generativeai package.",
+                color =0x000000 ,
+                timestamp =datetime .now (timezone .utc )
+                )
             if not self .gemini_api_key :
                 return discord .Embed (
                 title ="🖼️ Image Analysis",
@@ -1876,9 +1955,4 @@ Support server: https://discord.gg/JxCFmz9nZP"""
 
 async def setup (bot ):
     await bot .add_cog (AI (bot ))
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

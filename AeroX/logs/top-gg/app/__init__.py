@@ -131,9 +131,4 @@ async def topgg ():
 
     return {"message":"Vote registered successfully!"}
 
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

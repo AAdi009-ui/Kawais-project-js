@@ -17,9 +17,4 @@ class _welcome (commands .Cog ):
     @commands .group ()
     async def __Welcomer__ (self ,ctx :commands .Context ):
         """`greet setup` , `greet reset`, `greet channel` , `greet edit` , `greet test` , `greet config` , `greet autodeletete` , `greet`"""
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

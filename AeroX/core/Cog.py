@@ -12,9 +12,4 @@ class Cog (commands .Cog ):
 
     def __str__ (self )->str :
         return "{0.__class__.__name__}".format (self )
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

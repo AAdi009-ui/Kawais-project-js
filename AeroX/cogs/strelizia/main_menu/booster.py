@@ -17,9 +17,4 @@ class __boost (commands .Cog ):
     @commands .group ()
     async def __Boost__ (self ,ctx :commands .Context ):
         """`boost setup` , `boost message` , `boost channel` , `boostrole` , `boost config`"""
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

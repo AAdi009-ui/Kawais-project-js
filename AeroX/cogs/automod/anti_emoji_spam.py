@@ -144,9 +144,4 @@ class AntiEmojiSpam (commands .Cog ):
         await asyncio .sleep (10 )
 
 
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

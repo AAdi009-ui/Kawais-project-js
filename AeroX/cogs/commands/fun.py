@@ -316,7 +316,7 @@ class Fun (commands .Cog ):
           )
 
           embed .set_footer (
-          text =f'Made by AeroX Development',
+          text =f'Made by kyzen',
           icon_url =self .bot .user .avatar 
           )
 
@@ -680,7 +680,7 @@ class Fun (commands .Cog ):
       await ctx .reply ("<:icon_cross:1372375094336425986> No text provided for translation.")
       return 
 
-    processing_message =await ctx .send ("<a:Strelizia_loading:1373173756113195081> Translating...")
+    processing_message =await ctx .send ("<a:Cipher_loading:1373173756113195081> Translating...")
 
     try :
 
@@ -734,7 +734,7 @@ class Fun (commands .Cog ):
             )
             embed .set_thumbnail (url =self .bot .user .display_avatar .url )
             embed .set_footer (
-            text =f"Powered by AeroX Development • Requested by {ctx.author}",
+            text =f"Made by kyzen • Requested by {ctx.author}",
             icon_url =self .bot .user .display_avatar .url 
             )
 
@@ -749,15 +749,3 @@ class Fun (commands .Cog ):
       await processing_message .delete ()
       pass 
 
-"""
-@Author: Aegis
-    + Discord: Solcodez
-    + Community: https://discord.strelix.xyz (AeroX Development)
-    + for any queries reach out Community or DM me.
-"""
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""

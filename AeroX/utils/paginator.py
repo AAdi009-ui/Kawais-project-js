@@ -210,9 +210,4 @@ class Paginator (discord .ui .View ):
         """Go to the last page"""
         await self .show_page (interaction ,self .source .get_max_pages ()-1 )
 
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

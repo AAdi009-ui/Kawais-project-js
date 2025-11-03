@@ -197,7 +197,7 @@ class Extra (commands .Cog ):
       uptime_string =f"Up since {datetime.datetime.utcfromtimestamp(start_time).strftime('%Y-%m-%d %H:%M:%S')} UTC"
       uptime_duration_string =f"{uptime_timedelta.days} days, {uptime_timedelta.seconds // 3600} hours, {(uptime_timedelta.seconds // 60) % 60} minutes, {uptime_timedelta.seconds % 60} seconds"
 
-      embed =discord .Embed (title =f"Strelizia-bot Uptime",color =self .color )
+      embed =discord .Embed (title =f"Cipher-bot Uptime",color =self .color )
       embed .add_field (name ="__UTC__",value =f"<:icon_danger:1373170993236803688> {uptime_string}\n\n",inline =False )
       embed .add_field (name ="__Online Duration__",value =f"<:icon_ping:1373948868114513972> {uptime_duration_string}",inline =False )
       embed .set_footer (text =f"Requested by {ctx.author}",icon_url =pfp )
@@ -1013,8 +1013,8 @@ class Extra (commands .Cog ):
   @commands .hybrid_command (name ="report",
   aliases =["bug"],
   usage ='Report <bug>',
-  description ='Report a bug to the Development team.',
-  help ='Report a bug to the Development team.',
+  description ='Report a bug.',
+  help ='Report a bug.',
   with_app_command =True )
   @blacklist_check ()
   @ignore_check ()
@@ -1035,15 +1035,5 @@ class Extra (commands .Cog ):
     color =0x000000 )
     await ctx .reply (embed =confirm_embed )
 
-"""
-@Author: Aegis
-    + Discord: Solcodez
-    + Community: https://discord.strelix.xyz (AeroX Development)
-    + for any queries reach out support or DM me.
-"""
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+
+

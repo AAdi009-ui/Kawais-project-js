@@ -1202,15 +1202,5 @@ Reason: `{entry.reason}`\n\n''')
     embed .set_footer (text =f"Audit Log Actions For {ctx.guild.name}")
     await ctx .reply (embed =embed ,mention_author =False )
 
-"""
-@Author: Aegis
-    + Discord: Solcodez
-    + Community: https://discord.strelix.xyz (AeroX Development)
-    + for any queries reach out Community or DM me.
-"""
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+
+

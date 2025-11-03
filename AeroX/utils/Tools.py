@@ -6,7 +6,7 @@ import aiosqlite
 import asyncio 
 
 async def setup_db ():
-  async with aiosqlite .connect ('db/prefix.db')as db :
+  async with aiosqlite .connect ('../db/prefix.db')as db :
     await db .execute ('''
       CREATE TABLE IF NOT EXISTS prefixes (
         guild_id INTEGER PRIMARY KEY,
@@ -75,7 +75,7 @@ def updateignore (guild_id ,data ):
 
 
 async def getConfig (guildID ):
-  async with aiosqlite .connect ('db/prefix.db')as db :
+  async with aiosqlite .connect ('../db/prefix.db')as db :
     async with db .execute ("SELECT prefix FROM prefixes WHERE guild_id = ?",(guildID ,))as cursor :
       row =await cursor .fetchone ()
       if row :
@@ -89,7 +89,7 @@ async def getConfig (guildID ):
         return defaultConfig 
 
 async def updateConfig (guildID ,data ):
-  async with aiosqlite .connect ('db/prefix.db')as db :
+  async with aiosqlite .connect ('../db/prefix.db')as db :
     await db .execute (
     "INSERT OR REPLACE INTO prefixes (guild_id, prefix) VALUES (?, ?)",
     (guildID ,data ["prefix"])
@@ -101,7 +101,7 @@ async def updateAllGuildsPrefixFromEnv():
   import os
   new_prefix = os.getenv('BOT_PREFIX', '&')
   
-  async with aiosqlite .connect ('db/prefix.db')as db :
+  async with aiosqlite .connect ('../db/prefix.db')as db :
     # Update all existing guild prefixes to the new environment prefix
     await db .execute ("UPDATE prefixes SET prefix = ?", (new_prefix,))
     await db .commit ()
@@ -227,9 +227,4 @@ def mark_error_handled (ctx ):
     """Mark error as handled"""
     command_key =(ctx .message .id ,ctx .command .name )
     _handled_errors .add (command_key )
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

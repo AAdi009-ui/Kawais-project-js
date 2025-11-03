@@ -47,7 +47,7 @@ class Strelizia (commands .AutoShardedBot ):
         {"type":discord .ActivityType .watching ,"name":"over Strelizia HQ"},
         {"type":discord .ActivityType .listening ,"name":"to your commands"},
         {"type":discord .ActivityType .playing ,"name":"with Discord API"},
-        {"type":discord .ActivityType .streaming ,"name":"&help | AeroX Development","url":"https://twitch.tv/strelizia"},
+        {"type":discord .ActivityType .streaming ,"name":"&help | Cipher","url":""},
         {"type":discord .ActivityType .watching ,"name":"the Strelizia community"},
         {"type":discord .ActivityType .playing ,"name":"in Strelizia's digital garden"},
         {"type":discord .ActivityType .listening ,"name":"to Strelizia's heartbeat"},
@@ -167,9 +167,4 @@ def setup_bot ():
     bot =Strelizia (intents =intents )
     return bot 
 
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

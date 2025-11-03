@@ -19,9 +19,4 @@ class _tracking (commands .Cog ):
     async def __Tracking__ (self ,ctx :commands .Context ):
         """`tracking`, `tracking enable`, `tracking disable`, `tracking status`, `tracking setup`, `tracking wipe`, `tracking export`, `tracking import`, `tracking messages`, `tracking invites`, `tracking leaderboard`, `tracking messagelb`, `tracking dailylb`, `tracking invitelb`, `tracking addmessages`, `tracking resetmessages`, `tracking addinvites`, `tracking resetinvites`, `tracking setlogchannel`, `tracking myinvites`, `tracking resetall`
         """
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

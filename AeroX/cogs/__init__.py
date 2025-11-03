@@ -36,7 +36,7 @@ from .commands .ticket import AdvancedTicketSystem
 from .commands .timer import Timer 
 from .commands .staff import Staff 
 from .commands .verification import Verification 
-from .commands .ytverify import YTVerify 
+ 
 from .commands .roleplay import Roleplay 
 from .commands .blacklist import Blacklist 
 from .commands .block import Block 
@@ -106,7 +106,7 @@ from .strelizia .extra_menu .moderation import _moderation
 from .strelizia .extra_menu .server import _server 
 from .strelizia .extra_menu .roleplay import RoleplayHelp 
 from .strelizia .extra_menu .verification import VerificationHelp 
-from .strelizia .extra_menu .ytverify import YTVerifyHelp 
+ 
 from .strelizia .extra_menu .tracking import _tracking 
 from .strelizia .extra_menu .logging import _logging 
 from .strelizia .extra_menu .counting import _counting 
@@ -202,7 +202,7 @@ async def setup (bot :Strelizia ):
     (Timer ,"Timer"),
     (Staff ,"Staff"),
     (Verification ,"Verification"),
-    (YTVerify ,"YTVerify"),
+    
     (Roleplay ,"Roleplay"),
     (Blacklist ,"Blacklist"),
     (Block ,"Block"),
@@ -246,7 +246,7 @@ async def setup (bot :Strelizia ):
     (_server ,"_server"),
     (RoleplayHelp ,"RoleplayHelp"),
     (VerificationHelp ,"VerificationHelp"),
-    (YTVerifyHelp ,"YTVerifyHelp"),
+    
     (_tracking ,"_tracking"),
     (_logging ,"_logging"),
     (_counting ,"_counting"),
@@ -329,9 +329,3 @@ async def setup (bot :Strelizia ):
 
 
 
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""

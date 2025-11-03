@@ -55,7 +55,7 @@ class HelpCommand (commands .HelpCommand ):
     '_general','_voice','_games','_welcome','ticket','__sticky','__boost',
     '_automod','_antinuke','_music','_extra','_fun','_moderation','_giveaway',
 
-    '_leveling','_ai','_server','RoleplayHelp','VerificationHelp','YTVerifyHelp',
+    '_leveling','_ai','_server','RoleplayHelp','VerificationHelp',
     '_tracking','_logging','_counting','_Backup','_crew','_ignore'
     }
 
@@ -83,7 +83,7 @@ class HelpCommand (commands .HelpCommand ):
 
     filtered_mapping =self .create_strelizia_mapping (mapping )
 
-    embed =discord .Embed (description ="<a:Strelizia_loading:1373173756113195081> **Loading Help menu...**",color =color )
+    embed =discord .Embed (description ="<a:Cipher_loading:1373173756113195081> **Loading Help menu...**",color =color )
     ok =await self .context .reply (embed =embed )
     data =await getConfig (self .context .guild .id )
     prefix =data ["prefix"]
@@ -97,7 +97,7 @@ class HelpCommand (commands .HelpCommand ):
     title ="Help Menu",
     color =0x000000 
     )
-    embed .set_image (url ="https://cdn.discordapp.com/banners/1372468860435042344/2200c89d12a45d8cf648694ad30535f8.png?size=512")
+    embed .set_image (url ="https://cdn.discordapp.com/attachments/1362081176730337382/1434050912447631391/ABS2GSlqEjDVLZAAvJSF5SJIIshRiTBQ2ZGzDkOMO4pbyYfGEx7zt5mONQ2MWQizzmnjIBAa1BFA6h1ed2t9DqD3nbNfjT6jK5aOQTqD4OkQE9l4AJ_-RKifG53T-NQ9ys-GHLUEjrodvEPVKJRdGqe2AK6gok_B9D5FZg4kTMh68U1AZdEReQs1024-rj.png?ex=6906eb7c&is=690599fc&hm=9d5d9fea36469aebb98887e1bf9ebc4e34f3123e32361f24ee3647952d43434b&")
 
     embed .add_field (
     name ="<:home:1372530452681719950> __**General Features**__",
@@ -264,15 +264,4 @@ class Help (Cog ,name ="help"):
 
 
 
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

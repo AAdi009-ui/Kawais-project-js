@@ -330,7 +330,7 @@ class MusicControlView (View ):
         else :
             await interaction .response .send_message ("No song is currently playing.",ephemeral =True )
 
-    @discord .ui .button (emoji ="<a:Strelizia_loading:1372527554761855038>",style =discord .ButtonStyle .secondary )
+    @discord .ui .button (emoji ="<a:Cipher_loading:1372527554761855038>",style =discord .ButtonStyle .secondary )
     async def loop_button (self ,interaction :discord .Interaction ,button :Button ):
         self .player .queue .mode =wavelink .QueueMode .loop if self .player .queue .mode !=wavelink .QueueMode .loop else wavelink .QueueMode .normal 
         await interaction .response .send_message (f"Loop {'enabled' if self.player.queue.mode == wavelink.QueueMode.loop else 'disabled'} by **{interaction.user.display_name}**.")
@@ -478,7 +478,7 @@ class Music (Cog ):
 
             track =tracks [0 ]
             await vc .queue .put_wait (track )
-            await ctx .send (embed =discord .Embed (description =f"<:icons_plus:1373926975407657002> | Added [{track.title}](https://discord.gg/JxCFmz9nZP) to the queue.",color =0x000000 ))
+            await ctx .send (embed =discord .Embed (description =f"<:icons_plus:1373926975407657002> | Added [{track.title}]({track.uri}) to the queue.",color =0x000000 ))
 
             if not vc .playing :
                 try :
@@ -581,8 +581,8 @@ class Music (Cog ):
                         if hasattr (player ,'ctx')and player .ctx :
                             ended =discord .Embed (description ="Bot has been disconnected due to inactivity (being idle in Voice Channel) for more than 2 minutes.",color =0x000000 )
                             ended .set_author (name ="Inactive Timeout",icon_url =self .client .user .avatar .url )
-                            ended .set_footer (text ="Thanks for choosing Strelizia-bot!")
-                            support =Button (label ='Support',style =discord .ButtonStyle .link ,url ='https://discord.gg/JxCFmz9nZP')
+                            ended .set_footer (text ="Thanks for choosing Cipher-bot!")
+                            support =Button (label ='Kawai Scans',style =discord .ButtonStyle .link ,url ='https://discord.gg/kawaiscans')
                             vote =Button (label ='Vote',style =discord .ButtonStyle .link ,url ='https://top.gg')
                             view =View ()
                             view .add_item (support )
@@ -791,7 +791,7 @@ class Music (Cog ):
                                     except Exception as e :
                                         pass 
 
-                            support =Button (label ='Support',style =discord .ButtonStyle .link ,url ='https://discord.gg/JxCFmz9nZP')
+                            support =Button (label ='Kawai Scans',style =discord .ButtonStyle .link ,url ='https://discord.gg/kawaiscans')
                             vote =Button (label ='Vote',style =discord .ButtonStyle .link ,url ='https://top.gg')
                             view =SmartQueueView (self )
                             view .add_item (support )
@@ -845,7 +845,7 @@ class Music (Cog ):
 
             if isinstance (tracks ,wavelink .Playlist ):
                 await vc .queue .put_wait (tracks .tracks )
-                await ctx .send (embed =discord .Embed (description =f"<:icons_plus:1373926975407657002> | Added playlist [{tracks.name}](https://discord.gg/JxCFmz9nZP) with **{len(tracks.tracks)} songs** to the queue.",color =0x000000 ))
+                await ctx .send (embed =discord .Embed (description =f"<:icons_plus:1373926975407657002> | Added playlist **{tracks.name}** with **{len(tracks.tracks)} songs** to the queue.",color =0x000000 ))
                 if not vc .playing :
                     track =await vc .queue .get_wait ()
                     await vc .play (track )
@@ -853,7 +853,7 @@ class Music (Cog ):
             else :
                 track =tracks [0 ]
                 await vc .queue .put_wait (track )
-                await ctx .send (embed =discord .Embed (description =f"<:icons_plus:1373926975407657002> | Added [{track.title}](https://discord.gg/JxCFmz9nZP) to the queue.",color =0x000000 ))
+                await ctx .send (embed =discord .Embed (description =f"<:icons_plus:1373926975407657002> | Added [{track.title}]({track.uri}) to the queue.",color =0x000000 ))
                 if not vc .playing :
                     try :
                         next_track =await vc .queue .get_wait ()
@@ -886,7 +886,7 @@ class Music (Cog ):
 
                 track =search_results [0 ]
                 await vc .queue .put_wait (track )
-                await ctx .send (embed =discord .Embed (description =f"<:icons_plus:1373926975407657002> | Added [{track.title}](https://discord.gg/JxCFmz9nZP) to the queue.",color =0x000000 ))
+                await ctx .send (embed =discord .Embed (description =f"<:icons_plus:1373926975407657002> | Added [{track.title}]({track.uri}) to the queue.",color =0x000000 ))
                 if not vc .playing :
                     await vc .play (track )
                     await self .display_player_embed (vc ,track ,ctx )
@@ -928,7 +928,7 @@ class Music (Cog ):
                     except Exception as e :
                         continue 
 
-                await ctx .send (embed =discord .Embed (description =f"<:icons_plus:1373926975407657002> | Added **{c}** of **{playlist_length}** tracks from **playlist** **[{playlist_info['name']}](https://discord.gg/JxCFmz9nZP)** to the queue.",color =0x000000 ))
+                await ctx .send (embed =discord .Embed (description =f"<:icons_plus:1373926975407657002> | Added **{c}** of **{playlist_length}** tracks from **playlist** **{playlist_info['name']}** to the queue.",color =0x000000 ))
                 await lmao .delete ()
 
                 if not vc .playing :
@@ -938,7 +938,7 @@ class Music (Cog ):
 
             elif type_ =="album":
                 try :
-                    await ctx .message .add_reaction ("<a:Strelizia_loading:1372527554761855038>")
+                    await ctx .message .add_reaction ("<a:Cipher_loading:1372527554761855038>")
                 except Exception as e :
                     pass 
 
@@ -969,7 +969,7 @@ class Music (Cog ):
                     except Exception as e :
                         continue 
 
-                await ctx .send (embed =discord .Embed (description =f"<:icons_plus:1373926975407657002> | Added **{c}** tracks from album **[{album_info['name']}](https://discord.gg/JxCFmz9nZP)** to the queue.",color =0x000000 ))
+                await ctx .send (embed =discord .Embed (description =f"<:icons_plus:1373926975407657002> | Added **{c}** tracks from album **{album_info['name']}** to the queue.",color =0x000000 ))
                 if not vc .playing :
                     next_track =await vc .queue .get_wait ()
                     await vc .play (next_track )
@@ -2729,9 +2729,4 @@ class Music (Cog ):
 
 async def setup (client ):
     await client .add_cog (Music (client ))
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

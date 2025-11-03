@@ -19,9 +19,4 @@ class _crew (commands .Cog ):
     async def __Staff__ (self ,ctx :commands .Context ):
         """`crew`, `crew setup`, `crew clear`, `crew apply`, `crew enable`, `crew disable`, `crew status`
         """
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

@@ -43,9 +43,4 @@ def load_active_channels ()->dict :
         with open ("channels.json","r",encoding ='utf-8')as f :
             active_channels =json .load (f )
     return active_channels 
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+

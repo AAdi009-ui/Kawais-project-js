@@ -79,7 +79,7 @@ class Unlock (commands .Cog ):
         await channel .set_permissions (ctx .guild .default_role ,send_messages =True )
 
         embed =discord .Embed (
-        description =f" **Channel**: {channel.mention}\ **Status**: Unlocked\n **Reason:** Unlock request by {ctx.author}",
+        description =f" **Channel**: {channel.mention} **Status**: Unlocked\n **Reason:** Unlock request by {ctx.author}",
         color =self .color 
         )
         embed .add_field (name =" **Moderator:**",value =ctx .author .mention ,inline =False )
@@ -90,15 +90,5 @@ class Unlock (commands .Cog ):
         view .message =message 
 
 
-"""
-@Author: Aegis
-    + Discord: Solcodez
-    + Community: https://discord.strelix.xyz (AeroX Development)
-    + for any queries reach out Community or DM me.
-"""
-"""
-: ! Aegis !
-    + Discord: root.exe
-    + Community: https://discord.gg/meet (AeroX Development )
-    + for any queries reach out Community or DM me.
-"""
+
+
